@@ -104,7 +104,7 @@ namespace LogicaNegocio
             try
             {
                 bool exito = _productoRepo.Restaurar(idProducto);
-                return new ResultadoOperacion<bool>(exito, exito ? "Producto restaurado con éxito." : "No se pudo restaurar el producto.");
+                return new ResultadoOperacion<bool>(exito, exito?  "Producto restaurado con éxito." : "No se pudo restaurar el producto.");
             }
             catch (Exception ex)
             {

@@ -95,10 +95,10 @@ namespace AccesoDatos
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@nombre", entidad.Nombre);
-                    cmd.Parameters.AddWithValue("@descirpcion", entidad.Descirpcion);
+                    cmd.Parameters.AddWithValue("@descirpcion", entidad.Descripcion);
                     cmd.Parameters.AddWithValue("@idImagen", (object)entidad.IdImagen ?? DBNull.Value);
 
-                    return cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() != 0;
                 }
             }
             catch (SqlException ex)
@@ -117,10 +117,10 @@ namespace AccesoDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idCategoria", entidad.IdCategoria);
                     cmd.Parameters.AddWithValue("@nombre", entidad.Nombre);
-                    cmd.Parameters.AddWithValue("@descirpcion", entidad.Descirpcion);
+                    cmd.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
                     cmd.Parameters.AddWithValue("@idImagen", (object)entidad.IdImagen ?? DBNull.Value);
 
-                    return cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() != 0;
                 }
             }
             catch (SqlException ex)
@@ -139,7 +139,7 @@ namespace AccesoDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idCategoria", id);
 
-                    return cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() != 0;
                 }
             }
             catch (SqlException ex)
@@ -158,7 +158,7 @@ namespace AccesoDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idCategoria", id);
 
-                    return cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() != 0;
                 }
             }
             catch (SqlException ex)
@@ -173,7 +173,7 @@ namespace AccesoDatos
             {
                 IdCategoria = Convert.ToInt32(dr["idCategoria"]),
                 Nombre = dr["nombre"].ToString(),
-                Descirpcion = dr["descirpcion"].ToString(),
+                Descripcion = dr["descripcion"].ToString(),
                 IdImagen = dr["idImagen"] != DBNull.Value ? (int?)Convert.ToInt32(dr["idImagen"]) : null,
                 FechaCreacion = Convert.ToDateTime(dr["fechaCreacion"]),
                 FechaModificacion = dr["fechaModificacion"] != DBNull.Value ? (DateTime?)Convert.ToDateTime(dr["fechaModificacion"]) : null,

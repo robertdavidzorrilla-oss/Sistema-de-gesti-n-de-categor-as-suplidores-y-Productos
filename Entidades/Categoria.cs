@@ -24,7 +24,7 @@ namespace Entidades
         /// <summary>
         /// Obtiene o establece la descripción de la categoría.
         /// </summary>
-        public string Descirpcion { get; set; }
+        public string Descripcion { get; set; }
 
         /// <summary>
         /// Obtiene o establece el identificador opcional de la imagen asociada.

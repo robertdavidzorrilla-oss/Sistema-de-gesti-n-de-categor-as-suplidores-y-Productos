@@ -38,7 +38,7 @@ namespace LogicaNegocio
                 }
                 catch
                 {
-                    // Evita bloquear la ejecución de la app en caso de fallo de escritura en disco
+                    // Evita bloquear la ejecución de la app en caso de que haya un fallo de escritura en el disco
                 }
             }
         }

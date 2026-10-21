@@ -59,7 +59,7 @@ namespace LogicaNegocio
                 }
 
                 // Validation 2: Descripción obligatoria
-                if (string.IsNullOrWhiteSpace(categoria.Descirpcion))
+                if (string.IsNullOrWhiteSpace(categoria.Descripcion))
                 {
                     return new ResultadoOperacion<bool>(false, "La descripción de la categoría es obligatoria.");
                 }

@@ -96,7 +96,7 @@ namespace AccesoDatos
                     cmd.Parameters.AddWithValue("@idCategoria", entidad.IdCategoria);
                     cmd.Parameters.AddWithValue("@idSuplidor", entidad.IdSuplidor);
 
-                    return cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() != 0;
                 }
             }
             catch (SqlException ex)
@@ -119,7 +119,7 @@ namespace AccesoDatos
                     cmd.Parameters.AddWithValue("@idCategoria", entidad.IdCategoria);
                     cmd.Parameters.AddWithValue("@idSuplidor", entidad.IdSuplidor);
 
-                    return cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() != 0;
                 }
             }
             catch (SqlException ex)
@@ -138,7 +138,7 @@ namespace AccesoDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idProducto", id);
 
-                    return cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() !=0;
                 }
             }
             catch (SqlException ex)
@@ -157,7 +157,7 @@ namespace AccesoDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idProducto", id);
 
-                    return cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() != 0;
                 }
             }
             catch (SqlException ex)
